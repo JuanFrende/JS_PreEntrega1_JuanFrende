@@ -1,3 +1,8 @@
+// ARGENPUNK 2086 - SIMULADOR DE CREADOR DE PERSONAJES DE ROL
+
+
+// Funciones
+
 function Iniciando() {
   let cuenta1 = 1;
   let cuenta2 = 2;
@@ -103,6 +108,8 @@ let personajeCreado = () => {
   console.log("SUERTE: " + suerte);
 }
 
+
+// Llamando a cada funcion
 Iniciando();
 const continuar = Bienvenida();
 let nombre;
