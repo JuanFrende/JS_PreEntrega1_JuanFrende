@@ -1,19 +1,6 @@
 // ARGENPUNK 2086 - SIMULADOR DE CREADOR DE PERSONAJES DE ROL
 
-
 // Funciones
-
-function Iniciando() {
-  let cuenta1 = 1;
-  let cuenta2 = 2;
-  let cuenta3 = 3;
-  console.log("ARGENPUNK 2086");
-  console.log("Iniciando...");
-  console.log(cuenta3 + "...");
-  console.log(cuenta2 + "...");
-  console.log(cuenta1 + "...");
-  console.log("System ok");
-}
 
 function Bienvenida() {
   let consulta;
@@ -21,7 +8,11 @@ function Bienvenida() {
   alert("Bienvenid@ a 'ARGENPUNK 2086'");
   do {
     consulta = prompt(
-      "Estas por crear un personaje de rol - Escribe: 'Si' para continuar o 'ESC' para salir."
+      `Estas por crear un personaje de rol, escribe:
+      
+      Si = para continuar.
+      ESC = para salir.
+      `
     );
     if (consulta == "Si") {
       alert("¡¡¡ Empecemos !!!");
@@ -48,7 +39,13 @@ function elegirClase() {
   do {
     alert("Escoje el camino de vida de tu personaje");
     clase = Number(
-      prompt("Ingrese (1) para 'Hacker', (2) para 'Policia', (3) para 'Corpo'.")
+      prompt(
+        `Ingrese:
+      (1) para "Hacker"
+      (2) para "Policia"
+      (3) para "Corpo"
+      `
+      )
     );
     switch (clase) {
       case 1:
@@ -62,6 +59,9 @@ function elegirClase() {
       case 3:
         clase = "Corpo";
         alert("Has escogido: " + clase);
+        break;
+      default:
+        alert("Por favor escoja un numero del 1 al 3");
         break;
     }
     if (clase < 1 || clase > 3) {
@@ -85,7 +85,7 @@ let pedirValorDeAtributo = (nombreDelAtributo) => {
       return valorDeAtributo;
     }
   } while (true);
-}
+};
 
 function anunciarEstadisticas() {
   salud = puntosDeFuerza + puntosDeReflejos;
@@ -103,14 +103,18 @@ let personajeCreado = () => {
   console.log("Camino de vida: " + clase);
   console.log("Estadisticas:");
   console.log("SALUD: " + salud);
-  console.log("ENERGIA: " + energia);       
+  console.log("ENERGIA: " + energia);
   console.log("SABIDURIA: " + sabiduria);
   console.log("SUERTE: " + suerte);
-}
-
+};
 
 // Llamando a cada funcion
-Iniciando();
+console.log("ARGENPUNK 2086");
+console.log("Iniciando...");
+console.log("3" + "...");
+console.log("2" + "...");
+console.log("1" + "...");
+console.log("System ok");
 const continuar = Bienvenida();
 let nombre;
 let clase;
@@ -126,10 +130,18 @@ let sabiduria;
 let suerte;
 if (continuar) {
   nombre = perdirNombre();
+  console.log("Nombre ingresado");
   clase = elegirClase();
+  console.log("Camino de vida seleccionado");
   totalPuntos = 20;
   alert(
-    "Tienes 20 puntos de habilidad para asignar en los siguientes atributos: Fuerza, Reflejos, Habilidad tecnica, Inteligencia, Onda."
+    `Tienes 20 puntos de habilidad para asignar en los siguientes atributos:
+
+    - Fuerza
+    - Reflejos
+    - Habilidad tecnica
+    - Inteligencia
+    - Onda`
   );
   puntosDeFuerza = pedirValorDeAtributo("Fuerza");
   totalPuntos = totalPuntos - puntosDeFuerza;
@@ -146,6 +158,12 @@ if (continuar) {
   puntosDeOnda = pedirValorDeAtributo("Onda");
   totalPuntos = totalPuntos - puntosDeOnda;
 
+  console.log("Has asignado tus puntos de habilidad");
   anunciarEstadisticas();
-  personajeCreado();  
+  console.log("Creando personaje...");
+  console.log("Iniciando...");
+  console.log("3" + "...");
+  console.log("2" + "...");
+  console.log("1" + "...");
+  personajeCreado();
 }
